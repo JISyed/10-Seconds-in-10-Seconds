@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: af8e88784117bf248a0feb82f0bf4c79
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - spiritPrefab: {fileID: 100000, guid: ec574cb010cd78c438a21b4aecd591af, type: 2}
+  - preLabel: {instanceID: 0}
+  - matOffense: {fileID: 2100000, guid: ec845b75b41a40e4091a895c08903bfe, type: 2}
+  - matDefense: {fileID: 2100000, guid: cf67d8641c0704a47b889d4c135530bd, type: 2}
+  - matOffenseSpecial: {fileID: 2100000, guid: 9c2245b9398c3894d9b6279d2bd8b517, type: 2}
+  - matDefenseSpecial: {fileID: 2100000, guid: 6b8f59f933b1a59429a2e88a67ed2d08, type: 2}
+  - matWhiteL: {fileID: 2100000, guid: 79cefaf806a8a2146b52321ff745a193, type: 2}
+  - matBlackL: {fileID: 2100000, guid: fde5a28494bd1664c881c7a3d5cc38c2, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
