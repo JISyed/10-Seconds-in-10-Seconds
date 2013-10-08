@@ -188,11 +188,13 @@ public class AudioMixer : MonoBehaviour
 		FindAMObject();
 		if(! theInstance.ChannelIsValid(channel) ) return;
 		
+		
 		if(theInstance.channels[channel-1].clip == null)
 		{
 			Debug.LogError("AudioMixer.Play: Given channel does not have a AudioClip set. Use SetChannelAudioClip() first.");
 			return;
 		}
+		
 		
 		theInstance.channelsOccupied[channel-1] = true;
 		theInstance.channelsPaused[channel-1] = false;

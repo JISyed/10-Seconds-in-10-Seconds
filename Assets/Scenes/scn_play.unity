@@ -17021,6 +17021,7 @@ MonoBehaviour:
   soundPlayerInvinci: {fileID: 1992210615}
   soundPlayerSpecials: {fileID: 2039582966}
   sndSwap: {fileID: 8300000, guid: a4856753b559b6d40987ba4ae68befe4, type: 3}
+  musLoop: {fileID: 8300000, guid: 86af3fd3874e1459cb4078de123250ed, type: 3}
 --- !u!82 &1409264606
 AudioSource:
   m_ObjectHideFlags: 0

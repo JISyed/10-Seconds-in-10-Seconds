@@ -19,6 +19,7 @@ public class ControlGame : MonoBehaviour
 	public GameObject soundPlayerSpecials;
 	
 	public AudioClip sndSwap;
+	public AudioClip musLoop;
 	
 	public static float currTime = 10.0f;
 	public const int MAX_HEALTH = 100;
@@ -44,7 +45,10 @@ public class ControlGame : MonoBehaviour
 	private PlayInvncibleSound sndPlyrInvi;
 	private PlaySpecialModeSounds sndPlyrSpcl;
 	
-	
+	// For audio playing
+	private static bool musicReady = false;
+	private static bool firstMusicPlaying = true;
+	private static float musicTimer = 0.0f;
 	
 	// Use this for initialization
 	void Start () 
@@ -105,6 +109,7 @@ public class ControlGame : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		PlayMusic();
 		IncrementTime();
 		UpdateAmmoHUD();
 		UpdateCountdownHUD();
@@ -127,6 +132,50 @@ public class ControlGame : MonoBehaviour
 	
 	// For drawing gizmos
 	void OnDrawGizmos()	{}
+	
+	void OnDestroy()
+	{
+		musicReady = false;
+		musicTimer = 0.0f;
+	}
+	
+	private void PlayMusic()
+	{
+		// Setup music playing
+		if(!musicReady)
+		{
+			musicReady = true;
+			firstMusicPlaying = true;
+			AudioMixer.SetChannelLooping(1, false);
+			AudioMixer.Play(1, musLoop, AudioMixerChannelTypes.Music);
+			
+			AudioMixer.SetChannelLooping(2, false);
+			AudioMixer.SetChannelAudioClip(2, musLoop);
+			AudioMixer.SetChannelAudioType(2, AudioMixerChannelTypes.Music);
+		}
+		
+		// Smooth looping
+		musicTimer += Time.deltaTime;
+		if(firstMusicPlaying)
+		{
+			if(musicTimer > 43.0f)
+			{
+				firstMusicPlaying = false;
+				AudioMixer.Play(2, musLoop, AudioMixerChannelTypes.Music);
+				musicTimer = 0.0f;
+				
+			}
+		}
+		else
+		{
+			if(musicTimer > 43.0f)
+			{
+				firstMusicPlaying = true;
+				AudioMixer.Play(1, musLoop, AudioMixerChannelTypes.Music);
+				musicTimer = 0.0f;
+			}
+		}
+	}
 	
 	private void IncrementTime()
 	{
