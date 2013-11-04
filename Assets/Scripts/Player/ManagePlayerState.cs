@@ -204,6 +204,7 @@ public class ManagePlayerState : MonoBehaviour
 	
 	public void SwapState()	
 	{
+		// Whatever mode you were, be the other mode.
 		offenseMode = !offenseMode;
 		
 		if(isAI)

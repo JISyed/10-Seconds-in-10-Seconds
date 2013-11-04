@@ -15,6 +15,7 @@ public class PersistantCtrlr : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		// There can only be one PersistantCtrlr
 		if(alreadyExists)
 		{
 			Destroy(gameObject);
@@ -28,6 +29,7 @@ public class PersistantCtrlr : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		// Quit upon pressing escape
 		if(Input.GetKeyUp(KeyCode.Escape))
 		{
 			Application.Quit();

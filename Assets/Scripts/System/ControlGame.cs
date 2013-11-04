@@ -102,7 +102,7 @@ public class ControlGame : MonoBehaviour
 		{
 			SwapPlayerRoles();
 		}
-		*/
+		//*/
 		
 	}
 	
