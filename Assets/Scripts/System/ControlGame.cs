@@ -161,7 +161,8 @@ public class ControlGame : MonoBehaviour
 			if(musicTimer > 43.0f)
 			{
 				firstMusicPlaying = false;
-				AudioMixer.Play(2, musLoop, AudioMixerChannelTypes.Music);
+				//AudioMixer.Play(2, musLoop, AudioMixerChannelTypes.Music);
+				AudioMixer.Play(2);
 				musicTimer = 0.0f;
 				
 			}
@@ -171,7 +172,8 @@ public class ControlGame : MonoBehaviour
 			if(musicTimer > 43.0f)
 			{
 				firstMusicPlaying = true;
-				AudioMixer.Play(1, musLoop, AudioMixerChannelTypes.Music);
+				//AudioMixer.Play(1, musLoop, AudioMixerChannelTypes.Music);
+				AudioMixer.Play(1);
 				musicTimer = 0.0f;
 			}
 		}
