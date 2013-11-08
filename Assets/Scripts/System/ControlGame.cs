@@ -164,7 +164,6 @@ public class ControlGame : MonoBehaviour
 				//AudioMixer.Play(2, musLoop, AudioMixerChannelTypes.Music);
 				AudioMixer.Play(2);
 				musicTimer = 0.0f;
-				
 			}
 		}
 		else

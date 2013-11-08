@@ -15,6 +15,9 @@ public class HandleGameOver : MonoBehaviour
 		blackWinLabelPos = new Vector3(0.39f, 0.5f, 0.0f);
 		whiteWinLabelPos = new Vector3(0.38f, 0.5f, 0.0f);
 		
+		// Stop all previous sounds
+		AudioMixer.StopAll();
+		
 		// Ask the persistant controller who won.
 		GameObject persistantCtrlr = GameObject.FindWithTag("PerstCtrlr");
 		if(persistantCtrlr)
